@@ -1,3 +1,5 @@
+{{ config(materialized='table') }}
+
 WITH source_covid_data AS (
     select * from {{ source('covid_data', 'COVID_19_INDONESIA_PIYUSH_AGARWAL') }}
 ),
