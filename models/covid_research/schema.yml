@@ -1,0 +1,8 @@
+version: 2
+
+sources:
+  - name: covid_data
+    database: FIVETRAN_INTERVIEW_DB
+    schema: GOOGLE_SHEETS_PIYUSH
+    tables:
+      - name: COVID_19_INDONESIA_PIYUSH_AGARWAL
