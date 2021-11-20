@@ -8,10 +8,10 @@ final AS (
 ),
 
 getmonthyear AS (
-    SELECT CONCAT(CONCAT(MONTH(temp_date),'/'),YEAR(temp_date)) AS year_month, SUM(new_cases) AS new_cases_month, SUM(new_deaths) AS new_death_month, SUM(new_recovered) AS new_recovered_month
+    SELECT MONTH(temp_date) AS Month_, YEAR(temp_date) AS Year_, CONCAT(CONCAT(Month_,'-'),Year_) AS year_month, SUM(new_cases) AS new_cases_month, SUM(new_deaths) AS new_death_month, SUM(new_recovered) AS new_recovered_month
     FROM final
-    GROUP BY year_month
-    ORDER BY year_month
+    GROUP BY Month_,Year_
+    ORDER BY Year_, Month_
 )
 
 SELECT * FROM getmonthyear
