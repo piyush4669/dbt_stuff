@@ -3,7 +3,7 @@ WITH source_covid_data AS (
 ),
 
 final AS (
-    SELECT Province, MAX(TOTAL_DEATHS) AS total_deaths
+    SELECT Province, MAX(TOTAL_DEATHS) AS total_deaths, MAX(TOTAL_CASES) AS total_cases
     FROM source_covid_data
     WHERE Province IS NOT NULL
     GROUP BY Province
